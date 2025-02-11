@@ -33,6 +33,6 @@ app.use("/api/customer", CustomerRoutes); // Add new customer route
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-app.get("/", (req, res) => {
-    res.send("MySQL Connection Test Successful!");
-  });
+// app.get("/", (req, res) => {
+//     res.send("MySQL Connection Test Successful!");
+//   });
