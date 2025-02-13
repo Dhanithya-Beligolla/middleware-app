@@ -5,13 +5,14 @@ const cors = require("cors");
 const { checkDbConnection } = require("./dbConfig/dbConfig");
 
 // Check database connection
-checkDbConnection();
+//checkDbConnection();
 
 
 //Routers
 const CustomerTestRouter = require("./routes/CustomerTest");
 const CoBorrowerRouter = require("./routes/CoBorrower");
 const CustomerRoutes = require("./routes/customerRoutes"); // New route
+const CustomerAccQR = require("./routes/CustomerAccQR");  //Slipless test route
 
 
 const app = express();
@@ -27,6 +28,9 @@ app.use(express.json());
 app.use("/api/customer" ,CustomerTestRouter);
 app.use("/api/coborrower", CoBorrowerRouter);
 app.use("/api/customer", CustomerRoutes); // Add new customer route
+app.use("/api/searchnic", CustomerAccQR); // Add new customer route
+
+
 
 
 // Start server
