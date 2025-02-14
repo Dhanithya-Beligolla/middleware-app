@@ -5,7 +5,7 @@ const cors = require("cors");
 const { checkDbConnection } = require("./dbConfig/dbConfig");
 
 // Check database connection
-//checkDbConnection();
+checkDbConnection();
 
 
 //Routers
