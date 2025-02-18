@@ -2,20 +2,24 @@ require("dotenv").config();
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
-const { checkDbConnection } = require("./dbConfig/dbConfig");
+const { checkDbConnection } = require("./dbConfig/dbConfig");  //import DB configurations
 
-// Check database connection
-// checkDbConnection();
+//-------------------------------------
+//-----------------Import Routers
+//-------------------------------------
 
-
-//Routers
+//Test
 const CustomerTestRouter = require("./routes/CustomerTest");   //This is the main test you can change this anytime to test any API
-
-const CoBorrowerRouter = require("./routes/CoBorrower");
 const CustomerRoutes = require("./routes/customerRoutes"); // New route
 const CustomerAccQR = require("./routes/CustomerAccQR");  //Slipless test route
 
+//Application-Routers
+const applicationRoutes = require("./routes/applicationRoutes/applicationRoutes");
 
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+// Main Application
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
 const app = express();
 const PORT = process.env.PORT || 5693;
 
@@ -24,15 +28,24 @@ app.use(cors({credentials: true, origin: true}));
 app.use(express.json());
 
 
+//------------------------------------
+// ---------------Use Routers
+//------------------------------------
 
-// Use Routers
+//Test
 app.use("/api/customer" ,CustomerTestRouter);
-app.use("/api/coborrower", CoBorrowerRouter);
 app.use("/api/customer", CustomerRoutes); // Add new customer route
 app.use("/api/searchnic", CustomerAccQR); // Add new customer route
 
+//Application-Routers
+app.use("/api/application/", applicationRoutes);
 
 
+
+
+
+// Check database connection
+// checkDbConnection();
 
 // Start server
 app.listen(PORT, () => {

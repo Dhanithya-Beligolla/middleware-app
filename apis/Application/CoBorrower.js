@@ -1,12 +1,13 @@
 const express = require("express");
 const axios = require("axios");
-const route = express.Router();
+//const route = express.Router();
 
 // coborrower API route
-route.get("/coborrower-details", async (req, res) => {
+// route.get("/coborrower-details", async (req, res) => {
+exports.getCoborrowerDetails = async (req, res) => {
     const { leadCustomer } = req.query;
     if (!leadCustomer) {
-        return res.status(400).json({ error: "CIF_NO parameter is required" });
+        return res.status(400).json({ error: "leadCustomer parameter is required" });
     }
 
     try {
@@ -20,6 +21,6 @@ route.get("/coborrower-details", async (req, res) => {
         console.error("Error fetching data:", error.message);
         res.status(500).json({ error: "Failed to fetch Coborrower data" });
     }
-});
+};
 
-module.exports = route;
+//module.exports = route;
