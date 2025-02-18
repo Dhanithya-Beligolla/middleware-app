@@ -5,11 +5,12 @@ const cors = require("cors");
 const { checkDbConnection } = require("./dbConfig/dbConfig");
 
 // Check database connection
-checkDbConnection();
+// checkDbConnection();
 
 
 //Routers
-const CustomerTestRouter = require("./routes/CustomerTest");
+const CustomerTestRouter = require("./routes/CustomerTest");   //This is the main test you can change this anytime to test any API
+
 const CoBorrowerRouter = require("./routes/CoBorrower");
 const CustomerRoutes = require("./routes/customerRoutes"); // New route
 const CustomerAccQR = require("./routes/CustomerAccQR");  //Slipless test route
