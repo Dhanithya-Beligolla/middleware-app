@@ -45,7 +45,7 @@ app.use("/api/application/", applicationRoutes);
 
 
 // Check database connection
-// checkDbConnection();
+checkDbConnection();
 
 // Start server
 app.listen(PORT, () => {
