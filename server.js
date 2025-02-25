@@ -9,9 +9,9 @@ const { checkDbConnection } = require("./dbConfig/dbConfig");  //import DB confi
 //-------------------------------------
 
 //Test
-const CustomerTestRouter = require("./routes/CustomerTest");   //This is the main test you can change this anytime to test any API
-const CustomerRoutes = require("./routes/customerRoutes"); // New route
-const CustomerAccQR = require("./routes/CustomerAccQR");  //Slipless test route
+const CustomerTestRouter = require("./routes/testRouts/testUsingDB/CustomerTest");   //This is the main test you can change this anytime to test any API
+const CustomerRoutes = require("./routes/testRouts/testUsingAPI/customerRoutes"); // New route
+const CustomerAccQR = require("./routes/slipless/CustomerAccQR");  //Slipless test route
 
 //Application-Routers
 const applicationRoutes = require("./routes/applicationRoutes/applicationRoutes");
@@ -21,7 +21,7 @@ const applicationRoutes = require("./routes/applicationRoutes/applicationRoutes"
 // Main Application
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 const app = express();
-const PORT = process.env.PORT || 5693;
+const PORT = process.env.PORT;
 
 // Enable CORS
 app.use(cors({credentials: true, origin: true}));

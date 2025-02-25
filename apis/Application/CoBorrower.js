@@ -2,6 +2,8 @@ const express = require("express");
 const axios = require("axios");
 //const route = express.Router();
 
+baseurl = process.env.BASEURL;
+
 // Coborrower API 
 exports.getCoborrowerDetails = async (req, res) => {
     const { leadCustomer } = req.query;
@@ -9,7 +11,7 @@ exports.getCoborrowerDetails = async (req, res) => {
         return res.status(400).json({ error: "leadCustomer parameter is required" });
     }
     try {
-        const response = await axios.get(`http://10.18.50.145:7800/esb/fo_coborrower/v1/getCoborrowerDetails?leadCustomer=${leadCustomer}`, {
+        const response = await axios.get(`${baseurl}/esb/fo_coborrower/v1/getCoborrowerDetails?leadCustomer=${leadCustomer}`, {
             headers: {
                 'credentials': 'OBBANK0800/AAbank@100'
             }

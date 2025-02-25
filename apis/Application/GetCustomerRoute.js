@@ -2,6 +2,7 @@ const express = require("express");
 const axios = require("axios");
 // const route = express.Router();
 
+baseurl = process.env.BASEURL;
 
 // Customer API 
 exports.getCustomer = async (req, res) => {
@@ -10,7 +11,7 @@ exports.getCustomer = async (req, res) => {
         return res.status(400).json({ error: "clientId parameter is required" });
     }
     try {
-        const response = await axios.get(`http://10.18.50.145:7800/esb/customer/v1/getCustomer?clientId=${clientId}`, {
+        const response = await axios.get(`${baseurl}/esb/customer/v1/getCustomer?clientId=${clientId}`, {
             headers: {
                 'credentials': 'OBBANK0800/AAbank@100'
             }

@@ -1,7 +1,7 @@
 // routes/customerRoutes.js
 const express = require("express");
 const router = express.Router();
-const { pool } = require("../dbConfig/dbConfig");
+const { pool } = require("../../../dbConfig/dbConfig");
 
 /**
  * 🔍 GET /api/customer/:customerID
