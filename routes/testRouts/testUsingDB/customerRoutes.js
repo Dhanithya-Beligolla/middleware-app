@@ -7,13 +7,13 @@ const { pool } = require("../../../dbConfig/dbConfig");
  * 🔍 GET /api/customer/:customerID
  * Fetch customer details by customerID
  */
-router.get("/:customerID", async (req, res) => {
+router.get("/:clientid", async (req, res) => {
   try {
-    const customerID = req.params.customerID;
+    const clientid = req.params.clientid;
 
     // Execute query
     const [rows] = await pool.promise().query(
-      "SELECT * FROM customer WHERE customerID = ?", [customerID]
+      "SELECT * FROM t_dfcc_clientdetails WHERE clientid = ?", [clientid]
     );
 
     if (rows.length === 0) {

@@ -9,8 +9,8 @@ const { checkDbConnection } = require("./dbConfig/dbConfig");  //import DB confi
 //-------------------------------------
 
 //Test
-const CustomerTestRouter = require("./routes/testRouts/testUsingDB/CustomerTest");   //This is the main test you can change this anytime to test any API
-const CustomerRoutes = require("./routes/testRouts/testUsingAPI/customerRoutes"); // New route
+const CustomerTestRouter = require("./routes/testRouts/testUsingAPI/CustomerTest");   //This is the main test you can change this anytime to test any API
+const CustomerRoutes = require("./routes/testRouts/testUsingDB/customerRoutes"); // New route
 const CustomerAccQR = require("./routes/slipless/CustomerAccQR");  //Slipless test route
 
 //Application-Routers
