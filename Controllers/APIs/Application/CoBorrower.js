@@ -3,6 +3,7 @@ const axios = require("axios");
 //const route = express.Router();
 
 baseurl = process.env.BASEURL;
+credentialOB = process.env.CREDENTIALSOB;
 
 // Coborrower API 
 exports.getCoborrowerDetails = async (req, res) => {
@@ -13,7 +14,7 @@ exports.getCoborrowerDetails = async (req, res) => {
     try {
         const response = await axios.get(`${baseurl}/esb/fo_coborrower/v1/getCoborrowerDetails?leadCustomer=${leadCustomer}`, {
             headers: {
-                'credentials': 'OBBANK0800/AAbank@100'
+                'credentials': 'OBBANK0800/AAbank@100CC'
             }
         });
         res.json(response.data);

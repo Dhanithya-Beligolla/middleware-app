@@ -13,7 +13,7 @@ exports.getLeasingData = async (req, res) => {
     try {
         const response = await axios.get(`${baseurl}/esb/lsng/v1/getFacilityInqList?clientId=${clientId}`, {
             headers: {
-                'credentials': 'OBBANK0800/AAbank@100'
+                'credentials': 'OBBANK0800/AAbank@100CC'
             }
         });
         res.json(response.data);

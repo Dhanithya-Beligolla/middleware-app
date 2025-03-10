@@ -13,7 +13,7 @@ exports.getCustomer = async (req, res) => {
     try {
         const response = await axios.get(`${baseurl}/esb/customer/v1/getCustomer?clientId=${clientId}`, {
             headers: {
-                'credentials': 'OBBANK0800/AAbank@100'
+                'credentials': 'OBBANK0800/AAbank@100CC'
             }
         });
         res.json(response.data);

@@ -14,8 +14,8 @@ const CustomerRoutes = require("./routes/testRouts/testUsingDB/customerRoutes");
 const CustomerAccQR = require("./routes/slipless/CustomerAccQR");  //Slipless test route
 
 //Application-Routers
-const applicationRoutes = require("./routes/applicationRoutes/applicationRoutes");
-
+const applicationRoutes = require("./routes/applicationRoutes/apis/applicationRoutes");
+const applicationRoutesDB = require("./routes/applicationRoutes/db/ApplicationRoutesDB");
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 // Main Application
@@ -27,18 +27,18 @@ const PORT = process.env.PORT;
 app.use(cors({credentials: true, origin: true}));
 app.use(express.json());
 
-
 //------------------------------------
 // ---------------Use Routers
 //------------------------------------
 
 //Test
 app.use("/api/customer" ,CustomerTestRouter);
-app.use("/api/customer", CustomerRoutes); // Add new customer route
+app.use("/api/customerdb", CustomerRoutes); // Add new customer route
 app.use("/api/searchnic", CustomerAccQR); // Add new customer route
 
 //Application-Routers
 app.use("/api/application/", applicationRoutes);
+app.use("/db/application/", applicationRoutesDB);
 
 
 
